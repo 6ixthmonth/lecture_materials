@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- member.dao에 있는 MemberMapper.java 파일과 연결되어 특정 상황에서 이하의 쿼리를 실행할 수 있게 한다. -->
+<mapper namespace="member.dao.MemberMapper">
+
+	<!-- 회원 조회 -->
+	<select id="selectMember" resultType="member">
+		select
+			  member_no
+			, member_name
+			, member_age
+			, member_phone
+			, member_address
+			, member_indate
+		from
+			mybatis_member
+		order by
+			member_no
+	</select>
+
+	<!-- 회원 등록 -->
+	<insert id="insertMember" parameterType="member">
+		insert into mybatis_member (
+			  member_no
+			, member_name
+			, member_age
+			, member_phone
+			, member_address
+		) values (
+			  member_seq.nextval
+			, #{member_name}
+			, #{member_age}
+			, #{member_phone}
+			, #{member_address}
+		)
+	</insert>
+
+</mapper>

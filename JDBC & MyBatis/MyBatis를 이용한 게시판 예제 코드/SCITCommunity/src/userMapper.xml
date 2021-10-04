@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.UserMapper">
+
+<!-- 회원 가입 -->
+<insert id="signup" parameterType="User">
+	INSERT INTO
+		scit_user
+	VALUES (
+		  user_seq.NEXTVAL
+		, #{name}
+		, #{id}
+		, #{pw}
+	)
+</insert>
+
+<!-- 로그인 -->
+<select id="login" parameterType="User" resultType="String">
+	select 
+		name
+	from 
+		scit_user
+	where
+		id = #{id} and
+		pw = #{pw}
+</select>
+
+</mapper>
