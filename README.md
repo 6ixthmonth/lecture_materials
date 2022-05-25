@@ -12,5 +12,4 @@
 - HTML & CSS & JS: 웹 프론트엔드 기본 기술 강의 자료.
 - Java: Java 1.8 기초 문법 강의 자료.
 - JDBC & MyBatis: JDBC 기술 및 MyBatis 프레임워크에 대한 강의 자료 및 예제.
-- Oracle Database: Oracle Database 11g 연습 예제 자료.
 - Python: Python 3 기초 문법 강의 자료.
